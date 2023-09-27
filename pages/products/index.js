@@ -45,7 +45,6 @@ const ProductsPage = () => {
                 <button>Add cart</button>
             </li>
         ))}
-
       </ul>
       <Bottom></Bottom>
     </main>
