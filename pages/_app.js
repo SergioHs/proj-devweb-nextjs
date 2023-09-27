@@ -7,4 +7,3 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
   );
 }
 export default App;
-//https://www.blackslate.io/articles/nextjs-google-authentication-using-nextauth
