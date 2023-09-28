@@ -1,8 +1,12 @@
 import { SessionProvider } from "next-auth/react";
+import { CartProvider } from "@/app/contexts/CartContext";
+
 function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <CartProvider>
+        <Component {...pageProps} />
+      </CartProvider>
     </SessionProvider>
   );
 }
