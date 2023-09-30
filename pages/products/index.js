@@ -8,6 +8,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { fetchProducts } from '@/app/utils/api'
 import { CartContext } from '@/app/contexts/CartContext';
+import { ProductContainer, ProductImage, CardButton } from '@/app/styles/ProductsStyles'
 
 const ProductsPage = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState();
@@ -35,22 +36,21 @@ const ProductsPage = () => {
     <main className="min-h-screen">
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
-
-      <h1> Produtos da Loja Virtual </h1>
       <ul>
         {products.map((product) =>(
             <li key={product.id}>
-                <img src={product.image} width={200}></img>
+              <ProductContainer>
+                <ProductImage src={product.image} width={200} />
                 <p>{product.title}</p>
                 <p>{product.price}</p> 
                 <p>{product.description}</p>
                 <p>{product.category} </p>
-                <button 
-                  onClick={addToCart(product)}
-                  className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+                <CardButton 
+                  
                 >
                   Add cart
-                </button>
+                </CardButton>
+              </ProductContainer>
             </li>
         ))}
       </ul>

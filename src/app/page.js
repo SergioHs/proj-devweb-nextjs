@@ -17,13 +17,13 @@ export default function Home() {
     <main className="min-h-screen">
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
-          <button
+          {/* <button
             className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
             onClick={() => router.push("/login")}
           >
             {" "}
             Login
-          </button>
+          </button> */}
       <Bottom></Bottom>
     </main>
   )
