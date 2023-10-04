@@ -15,6 +15,11 @@ const CartContext = createContext();
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(getStoredCart());
 
+  useEffect(() => {
+    const storedCart = getStoredCart();
+    setCartItems(storedCart);
+  }, []);
+
   const saveToLocalStorage = (cart) => {
     if (typeof window !== 'undefined') {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));

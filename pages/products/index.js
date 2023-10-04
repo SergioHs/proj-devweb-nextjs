@@ -46,7 +46,7 @@ const ProductsPage = () => {
                 <p>{product.description}</p>
                 <p>{product.category} </p>
                 <CardButton 
-                  
+                  onClick={() => addToCart(product)}
                 >
                   Add cart
                 </CardButton>
