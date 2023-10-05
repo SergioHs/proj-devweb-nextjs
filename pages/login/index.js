@@ -31,18 +31,12 @@ const LoginPage = () => {
               Logado como: {session.user.name}, e-mail: {session.user.email} <br />
             </h2>
 
-            <img
-              src={session.user.image}
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            />
-            
+          
               <button
                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
-                onClick={() => router.push("/Profile")}
+                onClick={() => router.push("/profile/complete-profile")}
               >
-                User Profile
+                Complete your profile
               </button>
               <button
                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
